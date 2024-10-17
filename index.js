@@ -6,7 +6,7 @@ const passwordInput = document.getElementById('passwordInput');
 const addButton = document.getElementById('addButton');
 
 const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/data');
+    const response = await fetch('https://jsondata-1-wcmq.onrender.com/data');
     const data = await response.json();
     renderData(data);
 };
@@ -33,7 +33,7 @@ addButton.onclick = async () => {
         address: addressInput.value,
         password: passwordInput.value
     };
-    await fetch('http://localhost:3000/data', {
+    await fetch('https://jsondata-1-wcmq.onrender.com/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newData),
